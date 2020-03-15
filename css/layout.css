@@ -1,0 +1,113 @@
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.layout {
+  width: 100vw;
+  min-height: 100vh;
+  transition: all 0.5s;
+}
+.layout__content {
+  position: relative;
+  background: green;
+  height: 300vh;
+  padding: 1rem;
+}
+.layout.open {
+  margin-left: 300px;
+}
+.layout.open > .layout__sidebar {
+  left: 0;
+}
+
+.sidebar {
+  width: 300px;
+  flex-grow: 0;
+  background-color: #fcfcfc;
+  color: #212529;
+  flex-shrink: 0;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: -300px;
+  transition: all 0.5s;
+}
+.sidebar__control {
+  background: transparent;
+  outline: none;
+  border-radius: 5px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  top: 0px;
+  z-index: 1;
+  right: 0px;
+  transform: translateX(100%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.sidebar__control:focus {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sidebar__control:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sidebar__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.side-menu__link {
+  color: #212529;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 2rem 1rem 2rem 30px;
+  position: relative;
+}
+.side-menu__link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.side-menu__link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+.side-menu__link:hover::before {
+  transition: all 0.2s;
+  width: 15px;
+}
+.side-menu__item:nth-child(1n) .side-menu__link:hover::before {
+  background-color: #e57022;
+}
+.side-menu__item:nth-child(2n) .side-menu__link:hover::before {
+  background-color: #0d5eba;
+}
+.side-menu__item:nth-child(3n) .side-menu__link:hover::before {
+  background-color: #3fa152;
+}
+
+.baner {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1513735718075-2e2d37cb7cc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80);
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=layout.css.map */
